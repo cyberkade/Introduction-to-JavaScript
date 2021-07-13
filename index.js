@@ -165,49 +165,79 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-let cpuShoot = Math.random();
-function game(userShoot, cpuShoot){ 
-  if(cpuShoot < .33){
-    let cpuChoice =  'rock';
-    if(cpuChoice === userShoot){
-      return "it's a tie"
-    }
-    if(userShoot === 'paper'){
-      return 'you win!'
-    }else if(userShoot === 'scissors'){
-      return 'you lose!'
-  }else if(cpuShoot < .66){
-    let cpuChoice = 'paper'
-    if(cpuChoice === userShoot){
-      return "it's a tie"
-    }
-    if(userShoot === 'rock'){
-      return "you lose!"
-    } else if( userShoot === 'scissors'){
+let randomNum = Math.random();
+function game(userShoot, cpuNum){
+  if(cpuNum < .33){
+    let cpuShoot = 'rock'
+    if(userShoot === cpuShoot){
+      return "it's a tie!"
+    }else if(userShoot === 'paper'){
       return "you win!"
+    }else{
+      return "you lose!"
     }
-  }else if(cpuShoot < 1){
-    let cpuChoice = 'scissors'
-    if(cpuChoice === userShoot){
-      return "it's a tie"
-    }
-    if(userShoot === 'paper'){
-      return 'you lose!'
-    }else if(userShoot === 'rock'){
+  }else if(cpuNum < .66){
+    let cpuShoot = 'paper'
+    if(userShoot === cpuShoot){
+      return "it's a tie!"
+    }else if(userShoot === 'scissors'){
       return 'you win!'
+    }else{
+      return 'you lose!'
+    }
+  }else{
+    let cpuShoot = 'scissors'
+    if(userShoot === cpuShoot){
+      return "it's a tie"
+    } else if(userShoot === 'rock'){
+      return 'you win!'
+    } else{
+      return 'you lose!'
     }
   }
 }
-}
-console.log(game('scissors',cpuShoot));
-//   if(userShoot === 'rock' && cpuChoice === 'scissors'){
+
+//   else if(userShoot === 'rock' && cpuChoice === 'scissors'){
 //     return "you win!"
 //   }else if(userShoot === 'rock' && cpuChoice === 'paper'){
 //     return "you lose!"
-//   }else if(userShoot === cpuChoice){
-//     return "it's a tie!"
+//   }else 
+// }
+
+//   if(cpuShoot < .33){
+//     let cpuChoice =  'rock';
+//     if(cpuChoice === userShoot){
+//       return "it's a tie"
+//     }
+//     if(userShoot === 'paper'){
+//       return 'you win!'
+//     }else if(userShoot === 'scissors'){
+//       return 'you lose!'
+//   }else if(cpuShoot < .66){
+//     let cpuChoice = 'paper'
+//     if(cpuChoice === userShoot){
+//       return "it's a tie"
+//     }
+//     if(userShoot === 'rock'){
+//       return "you lose!"
+//     } else if( userShoot === 'scissors'){
+//       return "you win!"
+//     }
+//   }else if(cpuShoot < 1){
+//     let cpuChoice = 'scissors'
+//     if(cpuChoice === userShoot){
+//       return "it's a tie"
+//     }
+//     if(userShoot === 'paper'){
+//       return 'you lose!'
+//     }else if(userShoot === 'rock'){
+//       return 'you win!'
+//     }
 //   }
 // }
+// }
+// console.log(game('scissors',cpuShoot));
+
 
 
 
@@ -273,8 +303,18 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(score){
+  if(score <= 59){
+    return 'you got an F'
+  }else if(score <= 69){
+    return 'you got an D';
+  }else if(score <= 79){
+    return 'you got a C'
+  }else if(score <= 89){
+    return 'you got a B'
+  }else if(score <= 100){
+    return 'you got an A'
+  }
 }
 
 

@@ -121,7 +121,7 @@ NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.449
 
 function hungryDog(weight, age){
   if(age >= 1){
-    if(weight <= 5){
+    if(weight <= 5.99){
       return weight * .05;
     }else if(weight <= 10){
       return weight * 0.04;
@@ -165,6 +165,7 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+
 let randomNum = Math.random();
 function game(userShoot, cpuNum){
   if(cpuNum < .33){
@@ -197,50 +198,6 @@ function game(userShoot, cpuNum){
   }
 }
 
-//   else if(userShoot === 'rock' && cpuChoice === 'scissors'){
-//     return "you win!"
-//   }else if(userShoot === 'rock' && cpuChoice === 'paper'){
-//     return "you lose!"
-//   }else 
-// }
-
-//   if(cpuShoot < .33){
-//     let cpuChoice =  'rock';
-//     if(cpuChoice === userShoot){
-//       return "it's a tie"
-//     }
-//     if(userShoot === 'paper'){
-//       return 'you win!'
-//     }else if(userShoot === 'scissors'){
-//       return 'you lose!'
-//   }else if(cpuShoot < .66){
-//     let cpuChoice = 'paper'
-//     if(cpuChoice === userShoot){
-//       return "it's a tie"
-//     }
-//     if(userShoot === 'rock'){
-//       return "you lose!"
-//     } else if( userShoot === 'scissors'){
-//       return "you win!"
-//     }
-//   }else if(cpuShoot < 1){
-//     let cpuChoice = 'scissors'
-//     if(cpuChoice === userShoot){
-//       return "it's a tie"
-//     }
-//     if(userShoot === 'paper'){
-//       return 'you lose!'
-//     }else if(userShoot === 'rock'){
-//       return 'you win!'
-//     }
-//   }
-// }
-// }
-// console.log(game('scissors',cpuShoot));
-
-
-
-
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 //Metric Converter 
@@ -253,7 +210,8 @@ Using the miles function below do the following:
 */
 
 function miles(km){
-  return km / 1.609;
+  let miles = km * 0.621371;
+  return miles;
 }
 
 
@@ -266,7 +224,8 @@ Using the feet function below do the following:
 */
 
 function feet(cm){
-  return cm / 30.48;
+  let feet = cm / 30.48;
+  return feet;
 }
 
 
@@ -288,6 +247,8 @@ function annoyingSong(num){
     return `${total} bottles of soda on the wall, ${total} bottles of soda, take one down pass it around ${total - 1} bottles of soda on the wall`;
   }
 }
+console.log(annoyingSong(4));
+
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 //Grade Calculator
@@ -307,7 +268,7 @@ function grade(score){
   if(score <= 59){
     return 'you got an F'
   }else if(score <= 69){
-    return 'you got an D';
+    return 'you got a D';
   }else if(score <= 79){
     return 'you got a C'
   }else if(score <= 89){
@@ -332,8 +293,16 @@ HINT - try looking up the .includes() method
 */
 
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function vowelCounter(wordStr) {
+  let splitWord = wordStr.split('')
+  let total = 0;
+  if(splitWord.includes('a','e','i','o','u')){
+    return true;
+  }else if(splitWord.includes('A','E','I','O','U')){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 

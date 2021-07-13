@@ -166,37 +166,31 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-let randomNum = Math.random();
-function game(userShoot, cpuNum){
-  if(cpuNum < .33){
-    let cpuShoot = 'rock'
-    if(userShoot === cpuShoot){
-      return "it's a tie!"
-    }else if(userShoot === 'paper'){
-      return "you win!"
-    }else{
-      return "you lose!"
-    }
-  }else if(cpuNum < .66){
-    let cpuShoot = 'paper'
-    if(userShoot === cpuShoot){
-      return "it's a tie!"
-    }else if(userShoot === 'scissors'){
-      return 'you win!'
-    }else{
-      return 'you lose!'
-    }
+let cpu = Math.random();
+if(cpu <= 0.34){
+  cpu = 'rock';
+}else if(cpu < .66){
+  cpu = 'paper'
+}else{
+  computer = 'scissors'
+}
+
+function game(userShoot, cpu){
+  if(userShoot === cpu){
+    return "it's a tie"
+  } 
+
+  if(userShoot === 'rock' && cpu === 'scissors'){
+    return 'you win!'
+  }else if(userShoot === 'paper' && cpu === 'rock'){ 
+     return 'you win!'
+  }else if(userShoot === 'scissors' && cpu === 'paper'){
+    return 'you win!'
   }else{
-    let cpuShoot = 'scissors'
-    if(userShoot === cpuShoot){
-      return "it's a tie"
-    } else if(userShoot === 'rock'){
-      return 'you win!'
-    } else{
       return 'you lose!'
     }
   }
-}
+
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -240,14 +234,19 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
+// function annoyingSong(num){
+//   let total = num + 1;
+//   for(let i = 0; i < num; i++){
+//     total--;
+//     return `${total} bottles of soda on the wall, ${total} bottles of soda, take one down pass it around ${total - 1} bottles of soda on the wall`;
+//   }
+// }
+
 function annoyingSong(num){
-  let total = num + 1;
-  for(let i = 0; i < num; i++){
-    total--;
-    return `${total} bottles of soda on the wall, ${total} bottles of soda, take one down pass it around ${total - 1} bottles of soda on the wall`;
+  for(let i = num; i > 0; i--){
+    return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`;
   }
 }
-console.log(annoyingSong(4));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -298,7 +297,7 @@ function vowelCounter(wordStr) {
   let total = 0;
   if(wordArr.includes('a','e','i','o','u')){
     for(let i = 0;i < wordArr.length; i++){
-      
+
     }
   }else if(wordArr.includes('A','E','I','O','U')){
     return true;

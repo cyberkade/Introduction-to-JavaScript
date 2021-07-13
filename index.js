@@ -294,11 +294,13 @@ HINT - try looking up the .includes() method
 
 
 function vowelCounter(wordStr) {
-  let splitWord = wordStr.split('')
+  let wordArr = wordStr.split('')
   let total = 0;
-  if(splitWord.includes('a','e','i','o','u')){
-    return true;
-  }else if(splitWord.includes('A','E','I','O','U')){
+  if(wordArr.includes('a','e','i','o','u')){
+    for(let i = 0;i < wordArr.length; i++){
+      
+    }
+  }else if(wordArr.includes('A','E','I','O','U')){
     return true;
   }else{
     return false;

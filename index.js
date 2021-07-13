@@ -133,7 +133,7 @@ function hungryDog(weight, age){
   }else{
     if(age <= .33){
       return weight * .1;
-    }else if(age <= 0.583){
+    }else if(age <= 0.582){
       return weight * 0.05;
     }else if(age < 1){
       return weight * 0.04;
@@ -172,7 +172,7 @@ if(cpu <= 0.34){
 }else if(cpu < .66){
   cpu = 'paper'
 }else{
-  computer = 'scissors'
+  cpu = 'scissors'
 }
 
 function game(userShoot, cpu){
@@ -190,7 +190,6 @@ function game(userShoot, cpu){
       return 'you lose!'
     }
   }
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 

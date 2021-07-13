@@ -36,9 +36,10 @@ Do the following:
    HINT: no function required
 */
 let varOne = 12;
-let varTwo = 21;
+let varTwo = 29;
 if(varTwo >= 27){
   let varOne = 21;
+  console.log(varOne);
 }
 
 
@@ -257,7 +258,6 @@ function annoyingSong(num){
     return `${total} bottles of soda on the wall, ${total} bottles of soda, take one down pass it around ${total - 1} bottles of soda on the wall`;
   }
 }
-
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 //Grade Calculator

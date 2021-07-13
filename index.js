@@ -19,7 +19,10 @@ Do the following:
 
    HINT: no function required
 */
-
+let votingAge = 20;
+if(votingAge >= 18){
+console.log(true)
+}
 
 
 /*
@@ -32,7 +35,11 @@ Do the following:
 
    HINT: no function required
 */
-
+let varOne = 12;
+let varTwo = 21;
+if(varTwo >= 27){
+  let varOne = 21;
+}
 
 
 
@@ -47,7 +54,8 @@ Do the following:
 
    HINT: look up the Number method
 */
-
+let year = '1999'
+console.log(parseInt(year));
 
 
 
@@ -60,9 +68,10 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-  /*add your code here*/
+function multiply(a,b){
+  return a * b;
 }
+multiply(12,10);
 
 
 
@@ -76,10 +85,10 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age){
+  return age * 7;
 }
-
+dogYears(6);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -109,9 +118,29 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(weight, age){
+  if(age >= 1){
+    if(weight <= 5){
+      return weight * .05;
+    }else if(weight <= 10){
+      return weight * 0.04;
+    }else if( weight <= 15){
+      return weight * 0.03;
+    } else{
+      return weight * 0.02;
+    }
+  }else{
+    if(age <= .33){
+      return weight * .1;
+    }else if(age <= 0.583){
+      return weight * 0.05;
+    }else if(age < 1){
+      return weight * 0.04;
+    }
+  }
 }
+
+
 
 
 
@@ -135,10 +164,49 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-
-function game(user, computer){
-  /*add your code here*/
+let cpuShoot = Math.random();
+function game(userShoot, cpuShoot){ 
+  if(cpuShoot < .33){
+    let cpuChoice =  'rock';
+    if(cpuChoice === userShoot){
+      return "it's a tie"
+    }
+    if(userShoot === 'paper'){
+      return 'you win!'
+    }else if(userShoot === 'scissors'){
+      return 'you lose!'
+  }else if(cpuShoot < .66){
+    let cpuChoice = 'paper'
+    if(cpuChoice === userShoot){
+      return "it's a tie"
+    }
+    if(userShoot === 'rock'){
+      return "you lose!"
+    } else if( userShoot === 'scissors'){
+      return "you win!"
+    }
+  }else if(cpuShoot < 1){
+    let cpuChoice = 'scissors'
+    if(cpuChoice === userShoot){
+      return "it's a tie"
+    }
+    if(userShoot === 'paper'){
+      return 'you lose!'
+    }else if(userShoot === 'rock'){
+      return 'you win!'
+    }
+  }
 }
+}
+console.log(game('scissors',cpuShoot));
+//   if(userShoot === 'rock' && cpuChoice === 'scissors'){
+//     return "you win!"
+//   }else if(userShoot === 'rock' && cpuChoice === 'paper'){
+//     return "you lose!"
+//   }else if(userShoot === cpuChoice){
+//     return "it's a tie!"
+//   }
+// }
 
 
 
@@ -153,10 +221,9 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(km){
+  return km / 1.609;
 }
-
 
 
 //Task 5b - Feet to CM
@@ -167,8 +234,8 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){
+  return cm / 30.48;
 }
 
 
@@ -183,10 +250,13 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(num){
+  let total = num + 1;
+  for(let i = 0; i < num; i++){
+    total--;
+    return `${total} bottles of soda on the wall, ${total} bottles of soda, take one down pass it around ${total - 1} bottles of soda on the wall`;
+  }
 }
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
